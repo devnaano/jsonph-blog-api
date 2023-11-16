@@ -18,7 +18,7 @@ Após a conclusão das aulas, pretendo aprimorar a parte visual do projeto para 
 
 1. Clone o repositório para sua máquina local usando o comando:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/devnaano/jsonph-blog-api/
 2. Abra o arquivo index.html em seu navegador para visualizar o projeto.
 3. Explore o código-fonte para entender como a API está sendo consumida e como os dados estão sendo manipulados.
 
