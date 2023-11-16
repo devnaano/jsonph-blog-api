@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    padding: 30px;
+}
+fieldset {
+    padding: 5px 20px;
+}
+div h2 {
+    margin-top: 15px;
+}
+div hr {
+    margin-top: 5px;
+}
