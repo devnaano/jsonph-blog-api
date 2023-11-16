@@ -26,9 +26,9 @@ Após a conclusão das aulas, pretendo aprimorar a parte visual do projeto para 
 
 Após a conclusão inicial, planejo implementar as seguintes melhorias:
 
-- **Aprimorar a estrutura do HTML para melhor semântica.
-- **Adicionar estilos mais avançados ao CSS.
-- **Implementar funcionalidades adicionais usando JavaScript.
+- Aprimorar a estrutura do HTML para melhor semântica.
+- Adicionar estilos mais avançados ao CSS.
+- Implementar funcionalidades adicionais usando JavaScript.
 
 ## Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) ou enviar pull requests para sugerir melhorias ou correções.
