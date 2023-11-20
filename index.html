@@ -8,22 +8,27 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Fake Blog - JSONPlaceholder</h1>
-
-    <fieldset>
-        <legend>Inserir um novo post</legend>
-        <div>
-            <input type="text" id="titleField" placeholder="Título do post">
-        </div>
-        <div>
-            <textarea id="bodyField"></textarea>
-        </div>
-        <div>
-            <button id="insertButton">Inserir</button>
-        </div>
-    </fieldset>
-
-    <div class="posts"></div>
+    <main>
+        <section id="form-post">
+            <h1>Fake Blog - JSONPlaceholder</h1>
+            
+            <h2>New Post!</h2>
+            <div>
+                <label for="titleField">Título:</label>
+                <input type="text" id="titleField">
+            </div>
+            <div>
+                <label for="bodyField">Texto:</label>
+                <textarea id="bodyField"></textarea>
+            </div>
+            <div>
+                <button id="insertButton">Inserir</button>
+            </div>
+        </section>
+        <section id="posts">
+            <div class="posts-area"></div>
+        </section>
+    </main>   
 
     <script src="assets/js/script.js"></script>
 </body>

@@ -3,15 +3,79 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+main {
+    background-color: #2b4c7e;
     padding: 30px;
 }
-fieldset {
-    padding: 5px 20px;
+section {
+    max-width: 60%;
+    margin: auto;
+    padding: 30px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    background-color: #ececec;
+}
+#form-post h1{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 42px;
+}
+#form-post h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-style: italic;
+}
+#form-post #titleField,
+#form-post #bodyField {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#form-post #titleField {
+}
+#form-post #bodyField {
+    height: 150px;
+    resize: none;
 }
 div h2 {
     margin-top: 15px;
 }
 div hr {
     margin-top: 5px;
+}
+.posts-area {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+    overflow-y: scroll;
+}
+#posts .post {
+    background-color: #dce0e6;
+    border-radius: 50px 0 50px 0;
+    padding: 20px;
+}
+#posts .post h2{
+    margin-bottom: 40px;
+}
+#posts .post p {
+    margin-bottom: 20px;
+}
+#posts .post button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    opacity: .8;
+    transition: .3s;
+    cursor: pointer;
+}
+#posts .post button:hover {
+    opacity: 1;
+}
+#posts .post hr {
+    margin-top: 20px;
 }

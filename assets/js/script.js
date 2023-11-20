@@ -1,40 +1,49 @@
 // https://jsonplaceholder.typicode.com/posts
+const postsUrl = "https://jsonplaceholder.typicode.com/posts";
+
 
 async function readPosts() {
 
-    const postArea = document.querySelector('.posts');
+    const postArea = document.querySelector('.posts-area');
     postArea.innerHTML = 'Carregando...';
 
 
-    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    let response = await fetch(postsUrl);
     let json = await response.json();
 
     if (json.length > 0) {
         postArea.innerHTML = '';
 
         for (let i in json) {
-            let postHtml = `<div><h2>${json[i].title}</h2>${json[i].body}<hr/></div>`;
-            postArea.innerHTML += postHtml;
+            let createDivEl = document.createElement('div');
+            createDivEl.classList.add('post');
+
+            let createH2El = document.createElement('h2');
+            createH2El.innerHTML = `${json[i].title}`;
+            createDivEl.appendChild(createH2El);
+
+            let createPEl = document.createElement('p');
+            createPEl.innerHTML = `${json[i].body}`;
+            createDivEl.appendChild(createPEl);
+
+            let createButtonEl = document.createElement('button');
+            createButtonEl.innerHTML = 'Ler';
+            createDivEl.appendChild(createButtonEl);
+
+            let createHrEl = document.createElement('hr');
+            createDivEl.appendChild(createHrEl);
+            
+            postArea.appendChild(createDivEl);
         }
     } else {
         postArea.innerHTML = 'Nenhum post para exibir';
     }
-    
-    // let createDivEl = document.createElement('div');
-    // createDivEl.classList.add('posts');
-    // let createH2El = document.createElement('h2');
-    // createH2El.innerHTML = `${json[i].title}`;
-    // createDivEl.appendChild(createH2El);
-    // createPEl = document.createElement('p');
-    // createPEl.innerHTML = `${json[i].body}`;
-    // createDivEl.appendChild(createPEl);
-    // postArea.appendChild(createDiv);
 }
 
 
 async function addNewPost(title, body) {
     await fetch(
-        'https://jsonplaceholder.typicode.com/posts',
+        postsUrl,
         {
             method: 'POST',
             headers: {
