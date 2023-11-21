@@ -1,6 +1,6 @@
 // https://jsonplaceholder.typicode.com/posts
 const postsUrl = "https://jsonplaceholder.typicode.com/posts";
-
+const usersUrl = "https://jsonplaceholder.typicode.com/users";
 
 async function readPosts() {
 
@@ -10,11 +10,16 @@ async function readPosts() {
 
     let response = await fetch(postsUrl);
     let json = await response.json();
+    console.log(json);
 
     if (json.length > 0) {
         postArea.innerHTML = '';
 
         for (let i in json) {
+
+            let responseUser = await fetch(`${usersUrl}/${json[i].userId}`);
+            let jsonUser = await responseUser.json();
+ 
             let createDivEl = document.createElement('div');
             createDivEl.classList.add('post');
 
@@ -26,13 +31,21 @@ async function readPosts() {
             createPEl.innerHTML = `${json[i].body}`;
             createDivEl.appendChild(createPEl);
 
-            let createButtonEl = document.createElement('button');
-            createButtonEl.innerHTML = 'Ler';
-            createDivEl.appendChild(createButtonEl);
+            let createAEl = document.createElement('a');
+            createAEl.setAttribute('href',`${postsUrl}/${json[i].id}/comments`)
+            createAEl.innerHTML = 'Ler';
+            createDivEl.appendChild(createAEl);
 
-            let createHrEl = document.createElement('hr');
-            createDivEl.appendChild(createHrEl);
+            let createHrEl1 = document.createElement('hr');
+            createDivEl.appendChild(createHrEl1);
             
+            let createH3El = document.createElement('h3');
+            createH3El.innerHTML = `Autor: ${jsonUser.username}`;
+            createDivEl.appendChild(createH3El);
+
+            let createHrEl2 = document.createElement('hr');
+            createDivEl.appendChild(createHrEl2);
+
             postArea.appendChild(createDivEl);
         }
     } else {

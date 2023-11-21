@@ -2,28 +2,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 main {
     background-color: #2b4c7e;
     padding: 30px;
 }
 section {
-    max-width: 60%;
+    max-width: 80%;
     margin: auto;
     padding: 30px;
     margin-bottom: 80px;
     border-radius: 10px;
     background-color: #ececec;
 }
+section#form-post {
+    max-width: 50%;
+}
 #form-post h1{
     text-align: center;
     margin-bottom: 40px;
-    font-size: 42px;
+    font-size: 35px;
 }
 #form-post h2 {
     margin-bottom: 10px;
     font-size: 22px;
     font-style: italic;
+}
+#form-post div label {
+    font-weight: 600;
+    font-size: 18px;
 }
 #form-post #titleField,
 #form-post #bodyField {
@@ -31,11 +39,22 @@ section {
     padding: 5px;
     margin-bottom: 10px;
 }
-#form-post #titleField {
-}
 #form-post #bodyField {
     height: 150px;
     resize: none;
+}
+#form-post #insertButton {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(108, 199, 16);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+#form-post #insertButton:hover {
+    background-color: rgb(132, 243, 21);
 }
 div h2 {
     margin-top: 15px;
@@ -45,16 +64,21 @@ div hr {
 }
 .posts-area {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     align-content: center;
     gap: 30px;
     overflow-y: scroll;
 }
+.posts-area::-webkit-scrollbar {
+    width: 0px;
+}
 #posts .post {
-    background-color: #dce0e6;
-    border-radius: 50px 0 50px 0;
+    /* background-color: #2b4c7e; */
+    border-radius: 20px;
     padding: 20px;
+    /* color: #FFF; */
+    border: 2px solid #ccc;
 }
 #posts .post h2{
     margin-bottom: 40px;
@@ -62,20 +86,26 @@ div hr {
 #posts .post p {
     margin-bottom: 20px;
 }
-#posts .post button {
+#posts .post a {
+    display: inline-block;
     padding: 10px 20px;
+    margin-bottom: 20px;
     background-color: dodgerblue;
     border: none;
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
-    opacity: .8;
     transition: .3s;
     cursor: pointer;
+    text-decoration: none;
 }
-#posts .post button:hover {
-    opacity: 1;
+#posts .post a:hover {
+    background-color: rgb(0, 128, 255);
 }
-#posts .post hr {
-    margin-top: 20px;
+#posts .post h3 {
+    margin: 10px 0px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 10px;
 }
